@@ -35,5 +35,11 @@ where sales < 20;
 # all albums with a genre of "rock"
 select distinct(name), genre from albums
 where genre = 'rock';
+# these query results don't include albums with genres of 'hard rock' or 'progressive rock'
+# b/c we identify "genre '=' rock" not "genre 'like' '%rock%'"
+# ...
+# example of that:
+select distinct(name), genre from albums
+where genre like '%rock%';
 
 

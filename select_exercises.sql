@@ -5,16 +5,23 @@ show tables;
 
 select * from albums;
 
+# how many unique artist names are in the albums table?
 select count(distinct(artist)) from albums;
 
+#3c. what is the primary key for albums table?
 # primary key = Id
+
+#3d. 
+select min(release_date) from albums;
+select max(release_date) from albums;
 
 #4
 select * from albums;
 
 # name of all albums by Pink Floyd
 select name from albums
-where artist like '%Pink Floyd%';
+where artist = 'Pink Floyd';
+
 
 # the year SPLHCBand was released:
 select release_date from albums
@@ -25,7 +32,7 @@ select genre from albums
 where name = 'Nevermind';
 
 # which albums were released in the 1990s
-select distinct(name) from albums
+select name, release_date from albums
 where release_date between 1990 and 1999;
 
 # which albums had less than 20 mil certified sales

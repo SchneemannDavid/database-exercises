@@ -63,8 +63,8 @@ SELECT * FROM employees;
 #8
 SELECT count(*) AS Count
 FROM employees
-WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-30';
-# number of employees hired in the 90s = 135212
+WHERE hire_date LIKE '199%';
+# number of employees hired in the 90s = 135214
 
 #9
 SELECT count(*) AS Count
@@ -79,7 +79,7 @@ WHERE birth_date LIKE '%-12-25';
 #10
 SELECT count(*) AS Count
 FROM employees
-WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-30'
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
 AND birth_date LIKE '%-12-25';
 # number of employees hired in 90s and born on Xmas = 362
 

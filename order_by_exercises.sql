@@ -148,9 +148,16 @@ SELECT count(*) as Count
 FROM employees
 WHERE last_name like '%e' AND last_name like 'e%'
 ORDER BY hire_date DESC;
+
+#can also do...
+SELECT count(*) as Count
+FROM employees
+WHERE last_name like 'e%e'
+ORDER BY hire_date;
+
 # number of employees = 899
 # newest employee: Teiji Eldridge
-# oldest employee: Serfi Erde
+# oldest employee: Sergi Erde
 
 #7
 SELECT emp_no, first_name, last_name, hire_date, birth_date
@@ -168,4 +175,6 @@ WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-30'
 AND birth_date LIKE '%-12-25'
 ORDER BY birth_date DESC, hire_date ASC;
 # youngest employee hired first: Douadi Pettis
+# '412745','Douadi','Pettis','1990-05-04','1964-12-25'
+
 

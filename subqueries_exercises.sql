@@ -126,6 +126,7 @@ IN (SELECT emp_no
 		FROM dept_manager
 		WHERE to_date > NOW())
 	AND gender = 'F');
+-- Finance, HR, Development, Research
     
 
 ## B2
@@ -157,7 +158,7 @@ FROM salaries
 WHERE salary = (SELECT MAX(salary)
 FROM salaries
 WHERE to_date > NOW()));
-
+-- Sales
 
 
 

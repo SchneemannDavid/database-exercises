@@ -41,6 +41,18 @@ WHERE emp_no IN (SELECT emp_no
 FROM dept_emp 
 WHERE to_date < CURDATE());
 
+-- 85108 employees are no longer working for the company
+## ^THIS IS INCORRECT... includes employees who are still actually working for the company.
+
+## CORRECT SOLUTION:
+
+SELECT COUNT(*) 
+FROM employees
+WHERE emp_no NOT IN
+	(SELECT emp_no FROM dept_emp
+    WHERE to_date > NOW());
+-- 59900 employees are no longer working for the companny
+
 
 #4
 Select emp_no
@@ -85,10 +97,12 @@ WHERE to_date > NOW();
 SELECT COUNT(*)
 FROM salaries
 WHERE salary >= (SELECT MAX(salary)
-FROM salaries
-WHERE to_date > NOW()) - (SELECT std(salary)
-FROM salaries
-WHERE to_date > NOW())
+				FROM salaries
+				WHERE to_date > NOW()) 
+                - 
+                (SELECT std(salary)
+				FROM salaries
+				WHERE to_date > NOW())
 AND to_date > NOW();
 -- 83 current salaries
 

@@ -47,7 +47,7 @@ UPDATE kalpana_1813.employees_with_departments SET full_name = CONCAT(first_name
 # 1c & d
 ALTER TABLE kalpana_1813.employees_with_departments DROP COLUMN first_name;
 ALTER TABLE kalpana_1813.employees_with_departments DROP COLUMN last_name;
-## we could have ended up with this same table by editing the initially-created table.alter
+## we could have ended up with this same table by editing the initially-created table
 
 
 # 2

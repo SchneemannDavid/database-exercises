@@ -31,7 +31,7 @@ WHERE first_name = 'Aamod') AND dept_emp.to_date > NOW();
 
 
 #3
-SELECT emp_no
+/* SELECT emp_no
 FROM dept_emp 
 WHERE to_date < CURDATE();
 
@@ -40,7 +40,7 @@ FROM employees
 WHERE emp_no IN (SELECT emp_no
 FROM dept_emp 
 WHERE to_date < CURDATE());
-
+*/
 -- 85108 employees are no longer working for the company
 ## ^THIS IS INCORRECT... includes employees who are still actually working for the company.
 

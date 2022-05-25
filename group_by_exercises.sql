@@ -57,7 +57,7 @@ COUNT(*) as number_with_unique_username
 FROM employees
 GROUP BY username;
 
-# to find number of duplicate usernames:
+-- to find number of duplicate usernames:
 SELECT lower(concat(substr(first_name,1,1), 
 substr(last_name,1,4), 
 '_', 

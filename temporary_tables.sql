@@ -114,6 +114,6 @@ update kalpana_1813.salary_zscore set zscore = ((AVG - comp_avg) / std_dev);
 SELECT * FROM kalpana_1813.salary_zscore
 ORDER BY zscore;
 
-
-
+-- best department: Sales
+-- worst department: Human Resources
 

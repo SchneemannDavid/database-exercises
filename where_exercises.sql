@@ -10,7 +10,7 @@ WHERE first_name IN ('Irena','Vidya', 'Maya');
 
 SELECT Count(*) AS count
 FROM employees WHERE first_name IN ('Irena','Vidya', 'Maya');
-# number of records returned: 709
+-- number of records returned: 709
 
 #3
 SELECT emp_no, first_name, last_name
@@ -20,7 +20,7 @@ WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya';
 SELECT count(*) AS count
 FROM employees
 Where first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya';
-# number of records returned: 300024
+-- number of records returned: 300024
 
 SELECT * FROM employees;
 
@@ -29,12 +29,13 @@ SELECT count(*) AS Count
 FROM employees
 WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')
 	AND gender = 'M';
-    
+-- 441 records 
+
 #5
 SELECT count(*) AS Count
 FROM employees
 WHERE last_name LIKE 'e%';
-# number of employees = 7330
+-- number of employees = 7330
 
 SELECT emp_no, first_name, last_name
 FROM employees

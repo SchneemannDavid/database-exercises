@@ -95,9 +95,8 @@ select * from kalpana_1813.dept_groups;
 
 SELECT dept_group, avg(salary)
 FROM salaries
-JOIN employees USING (emp_no)
 JOIN dept_emp 
-ON employees.emp_no = dept_emp.emp_no AND dept_emp.to_date > NOW()
+ON salaries.emp_no = dept_emp.emp_no AND dept_emp.to_date > NOW()
 JOIN departments d USING (dept_no)
 JOIN kalpana_1813.dept_groups ON d.dept_name = kalpana_1813.dept_groups.dept_name
 GROUP BY dept_group;

@@ -17,7 +17,8 @@ JOIN dept_manager AS dm
 	ON de.emp_no = dm.emp_no
 JOIN employees as e
 	ON dm.emp_no = e.emp_no
-WHERE dm.to_date = '9999-01-01';
+WHERE dm.to_date = '9999-01-01'
+ORDER BY dept_name;
 
 #3
 SELECT d.dept_name, CONCAT(e.first_name, '_', e.last_name) as department_manager
@@ -28,7 +29,9 @@ JOIN dept_manager AS dm
 	ON de.emp_no = dm.emp_no
 JOIN employees as e
 	ON dm.emp_no = e.emp_no
-WHERE dm.to_date = '9999-01-01' AND e.gender = 'F';
+WHERE dm.to_date = '9999-01-01' AND e.gender = 'F'
+ORDER BY dept_name;
+
 
 select * from titles;
 select* from dept_emp;
@@ -125,7 +128,7 @@ LIMIT 1;
 
 
 #10
-SELECT d.dept_name, AVG(s.salary) as average_salary
+SELECT d.dept_name, round(AVG(s.salary)) as average_salary
 FROM departments as d
 JOIN dept_emp as de
 	ON d.dept_no = de.dept_no
@@ -148,7 +151,4 @@ JOIN employees AS e2
 WHERE dm.to_date = '9999-01-01' AND de.to_date = '9999-01-01'
 ORDER BY dept_name;
 
-
-
-#12
 

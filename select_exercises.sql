@@ -1,45 +1,54 @@
 use albums_db;
 
-#3
+# 3
 show tables;
 
 select * from albums;
 
-# how many unique artist names are in the albums table?
+# a. how many rows are in the albums table?
+-- 31 rows
+
+# b. how many unique artist names are in the albums table?
 select count(distinct(artist)) from albums;
+-- 23 unique names
 
 #3c. what is the primary key for albums table?
 # primary key = Id
 
-#3d. 
-select min(release_date) from albums;
-select max(release_date) from albums;
+# 3d. 
+select min(release_date) from albums; -- 1967
+select max(release_date) from albums; -- 2011
 
-#4
+# 4
 select * from albums;
 
-# name of all albums by Pink Floyd
+# a. name of all albums by Pink Floyd
 select name from albums
 where artist = 'Pink Floyd';
+-- The Dark Side of the Moon
+-- The Wall
 
-
-# the year SPLHCBand was released:
+# b. the year SPLHCBand was released:
 select release_date from albums
 where name = "Sgt. Pepper's Lonely Hearts Club Band";
+-- 1967
 
-# the genre for the album Nevermind
+# c. the genre for the album Nevermind
 select genre from albums
 where name = 'Nevermind';
+-- Grunge, Alt rock
 
-# which albums were released in the 1990s
+# d. which albums were released in the 1990s
 select name, release_date from albums
 where release_date between 1990 and 1999;
+-- ^see resulting table
 
-# which albums had less than 20 mil certified sales
+# e. which albums had less than 20 mil certified sales
 select distinct(name), sales from albums
 where sales < 20;
+-- ^see resulting table
 
-# all albums with a genre of "rock"
+# f. all albums with a genre of "rock"
 select distinct(name), genre from albums
 where genre = 'rock';
 # these query results don't include albums with genres of 'hard rock' or 'progressive rock'
